@@ -1,0 +1,1 @@
+npm run build:render && NPM_CONFIG_ELECTRON_MIRROR=http://npm.taobao.org/mirrors/electron/ electron-builder build --mac

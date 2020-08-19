@@ -1,0 +1,1 @@
+cross-env NPM_CONFIG_ELECTRON_MIRROR=http://npm.taobao.org/mirrors/electron/ electron-builder build --win --ia32

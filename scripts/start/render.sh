@@ -1,0 +1,1 @@
+cd app/renderer/src/main && npm start

@@ -1,8 +1,11 @@
 import React, { PureComponent } from 'react';
 import { HashRouter as Router, Route, Switch, Link } from 'dva/router';
 import { ConfigProvider } from "antd";
+import Store from 'electron-store';
+
 import Pro from './components/ProductList'
 import Test from './components/Test'
+const store = new Store();
 
 class RouterConfig extends PureComponent {
     render() {
@@ -16,6 +19,8 @@ class RouterConfig extends PureComponent {
 }
 
 function App() {
+    console.log(store.get('unicorn'));
+
     return (
         <div>
             这是主页

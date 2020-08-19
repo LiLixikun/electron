@@ -1,0 +1,1 @@
+concurrently "npm run start:render" "wait-on http://localhost:3000 && npm run start:electron" 

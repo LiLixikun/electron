@@ -1,0 +1,1 @@
+nodemon --watch './app/main/**/*.js' --exec 'npm run start:main'
