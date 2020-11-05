@@ -1,6 +1,8 @@
-const { override, fixBabelImports, addLessLoader, setWebpackTarget } = require('customize-cra');
+const { override, fixBabelImports, addLessLoader, setWebpackTarget, addDecoratorsLegacy, disableEsLint, } = require('customize-cra');
 
 module.exports = override(
+    addDecoratorsLegacy(),
+    disableEsLint(),
     fixBabelImports('import', {
         libraryName: 'antd',
         libraryDirectory: 'es',
@@ -10,7 +12,7 @@ module.exports = override(
         lessOptions: {
             javascriptEnabled: true,
             modifyVars: {
-                "@primary-color": "#1DA57A", // for example, you use Ant Design to change theme color.
+                "@primary-color": "#1DA57A"
             }
         }
 

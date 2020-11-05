@@ -1,1 +1,1 @@
-cd app/renderer/src/main && npm start
+cd app/renderer/src/main && npm run start

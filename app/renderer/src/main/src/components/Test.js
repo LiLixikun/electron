@@ -1,14 +1,19 @@
-import React from 'react';
+import React, { memo } from 'react';
 import { Tag } from 'antd';
 import { connect } from 'dva'
-const App = (props) => {
-    return (
-        <div className="App">
-            <Tag color="red">red</Tag>
-        </div>
-    )
-};
 
-export default connect(({ global }) => ({
+@connect(({ global }) => ({
     name: global.name
-}))(App);
+}))
+class App extends React.PureComponent {
+
+    render() {
+        console.log(this.props.name);
+        return (
+            <div className="App">
+                <Tag color="red">red</Tag>
+            </div>
+        )
+    }
+}
+export default memo(App)

@@ -1,4 +1,4 @@
-const { app, BrowserWindow, ipcMain } = require('electron')
+const { app, BrowserWindow } = require('electron')
 const isDev = require('electron-is-dev');
 const debug = require('electron-debug');
 const Store = require('electron-store');
@@ -24,17 +24,11 @@ app.on('ready', () => {
     })
     win.on('ready-to-show', () => {
         win.show()
-        console.log(store.get('unicorn'));
+        require('./request')
     })
     if (isDev) {
-        win.loadURL('http://localhost:3000')
+        win.loadURL('http://localhost:8888')
     } else {
         win.loadFile(path.resolve(__dirname, '../renderer/pages/main/index.html'))
     }
-})
-
-ipcMain.handle('invokable-ipc', async (event, ...arg) => {
-    console.log(arg);
-    const result = await "我是main 返回的"
-    return result
 })
